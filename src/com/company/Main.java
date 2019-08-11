@@ -56,12 +56,7 @@ public class Main {
         int niveau, vie, force, agilité, intelligence, cathego, cathegoP;
         if (entree1 == 1) {
             cathego= choix(true, name1);
-           tab=init();
-           niveau=tab[0];
-           vie=tab[1];
-           force=tab[2];
-           agilité=tab[3];
-           intelligence=tab[4];
+          
             CathegoPersonnage cathegoPersonnage= new CathegoPersonnage(cathego,name1, niveau, vie, force, agilité, intelligence);
             Personnage joueur1 = new Personnage( niveau, vie, force, agilité, intelligence, cathegoPersonnage);
             int Max =100, min1 =1, min2= 0;

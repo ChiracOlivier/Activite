@@ -26,7 +26,11 @@ public class Main {
         int[] tab1={0,0,0,0,0};
         do {
             System.out.println("Choisissez vos paramètres !!!(le niveau doit ètre égal à la somme(force+agilité+intelligence)), MERCI.\n");
-           
+            tab1[0]=init1(string1);
+            tab1[1] = tab1[0] * 5;
+            tab1[2] =init1(string2);
+            tab1[3] = init1(string3);
+            tab1[4] = init1(string4);
         } while (tab1[0]!=(tab1[2]+tab1[3]+tab1[4]));
         return tab1;
     }

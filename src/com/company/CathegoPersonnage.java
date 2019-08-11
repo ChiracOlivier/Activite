@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CathegoPersonnage {
 
 
-    public CathegoPersonnage(int cathego, String name, int niveau, int vie, int force, int agilité, int intellij) {
+    CathegoPersonnage(int cathego, String name, int niveau, int vie, int force, int agilité, int intellij) {
         switch (cathego){
             case 1:
                 System.out.println("Woarg, je suis le Guerrier "+name+" niveau "+niveau+" je possède "+vie+" de vitalité "+force+" de force "+agilité+" d'agilité et "+intellij+" d'intelligence !");
@@ -20,7 +20,7 @@ public class CathegoPersonnage {
                 break;
         }
     }
-    public int[] attaque(int vitalit , int vital ,String name , String nam, int cathego, boolean ordix, int dommage, int dommag, int intellij, int intelliji) {
+    int[] attaque(int vitalit, int vital, String name, String nam, int cathego, boolean ordix, int dommage, int dommag, int intellij, int intelliji) {
         Scanner sc = new Scanner(System.in);
         int[] tab= {1,1,1};
         if (!ordix) {
@@ -124,9 +124,15 @@ public class CathegoPersonnage {
         }
         return tab;
     }
-
     @Override
     public String toString() {
         return "CathegoPersonnage{}";
     }
 }
+
+
+
+
+
+
+

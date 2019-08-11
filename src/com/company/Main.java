@@ -4,36 +4,62 @@ import java.util.Scanner;
 
 public class Main {
 
+
+    private static int verif(int a){
+            if ((a >= 0) && (a <= 100)) {
+                return a;
+            } else
+                System.out.println("votre valeur doit etre comprise entre 0 et 100.");
+                return -1;
+    }
+    private static int init1(String b){
+        Scanner sc1= new Scanner(System.in);
+        int entier1;
+        do {
+            System.out.println(b+" du personnage ??(valeur entre 0 et 100)");
+            entier1= verif(sc1.nextInt());
+        }while (entier1==-1);
+        return entier1;
+    }
+    private static int[] init(){
+        String string1="niveau", string2="force", string3="agilité", string4="intelligence";
+        int[] tab1={0,0,0,0,0};
+        do {
+            System.out.println("Choisissez vos paramètres !!!(le niveau doit ètre égal à la somme(force+agilité+intelligence)), MERCI.\n");
+           
+        } while (tab1[0]!=(tab1[2]+tab1[3]+tab1[4]));
+        return tab1;
+    }
+      private static int choix(boolean a, String string){
+          Scanner sc = new Scanner(System.in);
+        if (a) {
+            System.out.println("Création du personnage du "+string+"\n Veuillez choisir la classe du personnage: (1: Guerrier, 2: Rodeur, 3: Mage) ");
+            return sc.nextInt();
+        }else{
+            System.out.println("Bienvenue dans ce jeu  épique!!!\n");
+            System.out.println("Choississez votre mode :\n 1: 1 joueur\n 2: 2 joueurs\n");
+            return sc.nextInt();
+        }
+      }
     /**
      * @param args
      */
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        int entree1, tab[];
-
-        System.out.println("Bienvenue dans ce jeu  épique!!!\n");
-        System.out.println("Choississez votre mode :\n 1: 1 joueur\n 2: 2 joueurs\n");
-        entree1 = sc.nextInt();
-        int niveau, vie, force, agilité, intelligence, cathego, cathegoP;
         String name1="Joueur 1", name2="ORDINATEUR", name3="Joueur 2";
+        int entree1, tab[];
+        entree1 = choix(false, name1);
+        int niveau, vie, force, agilité, intelligence, cathego, cathegoP;
         if (entree1 == 1) {
-            System.out.println(" Création du personnage du joueur 1\nVeuillez choisir la classe du personnage: (1: Guerrier, 2: Rodeur, 3: Mage) ");
-            cathego= sc.nextInt();
-           do {
-                System.out.println("Choisissez bien vos paramètres !!!\n\n niveau du personnage ??");
-                niveau = sc.nextInt();
-                vie = niveau * 5;
-                System.out.println("force du personnage ??");
-                force = sc.nextInt();
-                System.out.println("agilité du personnage ??");
-                agilité = sc.nextInt();
-                System.out.println("intelligence du personnage ??");
-                intelligence = sc.nextInt();
-            } while (niveau!=(force+agilité+intelligence));
+            cathego= choix(true, name1);
+           tab=init();
+           niveau=tab[0];
+           vie=tab[1];
+           force=tab[2];
+           agilité=tab[3];
+           intelligence=tab[4];
             CathegoPersonnage cathegoPersonnage= new CathegoPersonnage(cathego,name1, niveau, vie, force, agilité, intelligence);
-
-            Personnage joueur1 = new Personnage( niveau, vie, force, agilité, intelligence, cathegoPersonnage, name1);
+            Personnage joueur1 = new Personnage( niveau, vie, force, agilité, intelligence, cathegoPersonnage);
             int Max =100, min1 =1, min2= 0;
             int range1= Max-min1+1;
             int range2= Max-min2+1;
@@ -45,7 +71,6 @@ public class Main {
              cathegoP= (int)(Math.random()*3) + 1 ;
             CathegoPersonnage cathegoPersonnag= new CathegoPersonnage(cathegoP, name2,niveau, vi, forc, agilit, intelligenc);
             Ordi ordi = new Ordi(nivea, vi, forc, agilit, intelligenc, cathegoPersonnag, name2);
-
             while ((joueur1.getVie()>0)&&(ordi.getVie()>0)) {
                  tab= joueur1.getCathegoPersonnage().attaque( joueur1.getVie(), ordi.getVie(), name1, name2, cathego, false, joueur1.getForce(), joueur1.getAgilité(), ordi.getIntelligence(), joueur1.getIntelligence());
                 joueur1.setVie(tab[0]);
@@ -62,39 +87,25 @@ public class Main {
                 System.out.println("Joueur 1 a perdu");
             else if (ordi.getVie()<=0)
                 System.out.println("ORDINATEUR a perdu");
-
         } else if (entree1 == 2) {
-            System.out.println("Création du personnage du joueur 1\n Veuillez choisir la classe du personnage: (1: Guerrier, 2: Rodeur, 3: Mage) ");
-            cathego= sc.nextInt();
-            do {
-                System.out.println("Choisissez bien vos paramètres\n\nniveau du personnage ??");
-                niveau = sc.nextInt();
-                vie = niveau * 5;
-                System.out.println("force du personnage ??");
-                force = sc.nextInt();
-                System.out.println("agilité du personnage ??");
-                agilité = sc.nextInt();
-                System.out.println("intelligence du personnage ??");
-                intelligence = sc.nextInt();
-            } while (niveau!=(force+agilité+intelligence));
+            cathego= choix(true, name1);
+            tab=init();
+            niveau=tab[0];
+            vie=tab[1];
+            force=tab[2];
+            agilité=tab[3];
+            intelligence=tab[4];
             CathegoPersonnage cathegoPersonnage = new CathegoPersonnage(cathego, name1, niveau, vie, force,agilité ,intelligence);
-            Personnage joueur1 = new Personnage(niveau, vie, force, agilité, intelligence, cathegoPersonnage, name1);
-
-            System.out.println(" Création du personnage du joueur 2 \nVeuillez choisir la classe du personnage: (1: Guerrier, 2: Rodeur, 3: Mage) ");
-            cathegoP= sc.nextInt();
-            do {
-                System.out.println("Choisissez bien vos paramètres\n\nniveau du personnage ??");
-                niveau = sc.nextInt();
-                vie = niveau * 5;
-                System.out.println("force du personnage ??");
-                force = sc.nextInt();
-                System.out.println("agilité du personnage ??");
-                agilité = sc.nextInt();
-                System.out.println("intelligence du personnage ??");
-                intelligence = sc.nextInt();
-            }  while (niveau!=(force+agilité+intelligence));
+            Personnage joueur1 = new Personnage(niveau, vie, force, agilité, intelligence, cathegoPersonnage);
+            cathegoP= choix(true, name3);
+            tab=init();
+            niveau=tab[0];
+            vie=tab[1];
+            force=tab[2];
+            agilité=tab[3];
+            intelligence=tab[4];
             CathegoPersonnage cathegoPersonnage1 = new CathegoPersonnage(cathegoP, name3, niveau, vie, force,agilité ,intelligence);
-            Personnage joueur2 = new Personnage(niveau, vie, force, agilité, intelligence, cathegoPersonnage1, name3);
+            Personnage joueur2 = new Personnage(niveau, vie, force, agilité, intelligence, cathegoPersonnage1);
 
             while ((joueur1.getVie()>0)&&(joueur2.getVie()>0)) {
                 tab= joueur1.getCathegoPersonnage().attaque(joueur1.getVie(), joueur2.getVie(), name1, name3, cathego, false, joueur1.getForce(), joueur1.getAgilité(), joueur2.getIntelligence(), joueur1.getIntelligence());
@@ -117,23 +128,3 @@ public class Main {
         System.out.println("FIN DU JEU");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

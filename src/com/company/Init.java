@@ -2,6 +2,10 @@ package com.company;
 
 import java.util.Scanner;
 
+/**
+ * classe d'initialisation des joueurs "Joueur1" et "Joueur2"
+ * elle prend un tableau vide en entrée , le remplit et le produit en sortie.
+ */
 class Init {
     private int[] tab1;
     Init(int[] tab1) {

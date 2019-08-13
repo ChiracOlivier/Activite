@@ -1,5 +1,9 @@
 package com.company;
 
+/**
+ * classe du mode un joueur( vous jouez contre l'ordinateur)
+ * (je vais bientot coder une intelligence artificielle, ahahahahahhaha)
+ */
 class ModeUnJoueur {
     ModeUnJoueur(String name1) {
         String name2 = "ORDINATEUR";

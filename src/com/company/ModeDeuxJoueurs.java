@@ -1,5 +1,9 @@
 package com.company;
 
+/**
+ * classe d'execution du mode deux joueurs ( le mode démandé par le prof)
+ * son constructeur reçoit un string en paramètre pour le nom du premier joueur.
+ */
 class ModeDeuxJoueurs {
     ModeDeuxJoueurs(String name1){
         String name3="Joueur 2";

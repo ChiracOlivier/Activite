@@ -2,6 +2,10 @@ package com.company;
 
 import java.util.Scanner;
 
+/**
+ * classe d'execution des attaques en fonction des choix effectués dans la classe Choix()
+ * et des paramètres initialisés dans les classes Init() et InitOrdi()
+ */
 public class CathegoPersonnage {
 
 

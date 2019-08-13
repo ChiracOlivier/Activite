@@ -2,6 +2,10 @@ package com.company;
 
 import java.util.Scanner;
 
+/**
+ * classe permettant d'effectuer ses choix de mode
+ * et ses choix de classe de personnage
+ */
 class Choix {
 
     Choix() {

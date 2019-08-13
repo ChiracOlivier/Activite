@@ -1,5 +1,9 @@
 package com.company;
 
+/**
+ * classe d'initialisation des paramètres du joueur"ORDINATEUR"
+ * il reçoit un tableau vide en entrée et le remplit pour le renvoyer à la fin de son execution.
+ */
 class InitOrdi {
     private int[] tab1;
 

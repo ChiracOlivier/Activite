@@ -2,6 +2,7 @@ package com.company;
 
 public class Main {
     /**
+     * fonction principale d'execution du programme.
      * @param args
      */
     public static void main(String[] args) {

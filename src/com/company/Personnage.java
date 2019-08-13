@@ -1,5 +1,8 @@
 package com.company;
 
+/**
+ * classe de création des personnages du jeu, joueur1, joueur2 et ordinateur
+ */
 public class Personnage {
     private int niveau, vie, force , agilité,  intelligence;
     private CathegoPersonnage cathegoPersonnage;

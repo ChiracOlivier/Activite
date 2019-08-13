@@ -11,29 +11,26 @@ public class Personnage {
             this.intelligence= intelligence;
             this.cathegoPersonnage= cathegoPersonnage;
     }
-    public int getVie() {
+    int getVie() {
         return vie;
     }
-    public void setVie(int vie) {
+    void setVie(int vie) {
         this.vie = vie;
     }
-    public int getForce() {
+    int getForce() {
         return force;
     }
-    public int getAgilité() {
+    int getAgilité() {
         return agilité;
     }
-    public void setAgilité(int agilité) {
+    void setAgilité(int agilité) {
         this.agilité = agilité;
     }
-    public int getIntelligence() {
+    int getIntelligence() {
         return intelligence;
     }
-    public CathegoPersonnage getCathegoPersonnage() {
+    CathegoPersonnage getCathegoPersonnage() {
         return cathegoPersonnage;
-    }
-    public void setCathegoPersonnage(CathegoPersonnage cathegoPersonnage) {
-        this.cathegoPersonnage = cathegoPersonnage;
     }
     @Override
     public String toString() {

@@ -8,7 +8,16 @@ class Init {
         this.tab1=tab1;
     }
 
-  
+    int[] getTab1(int[] tab1) {
+        return setTab(tab1);
+    }
+    private static int verif(int a){
+        if ((a >= 0) && (a <= 100)) {
+            return a;
+        } else
+            System.out.println("votre valeur doit etre comprise entre 0 et 100.");
+        return -1;
+    }
     private static int init1(String b){
         Scanner sc1= new Scanner(System.in);
         int entier1;

@@ -17,3 +17,5 @@ public class Main {
         System.out.println("FIN DU JEU");
     }
 }
+
+// Fin de l'application après deux semaines de boulot. Mais ça fonctionne. Mdrr...

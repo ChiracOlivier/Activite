@@ -6,13 +6,13 @@ import java.util.Scanner;
  * classe permettant d'effectuer ses choix de mode
  * et ses choix de classe de personnage
  */
-class Choix {
+public class Choix {
 
     Choix() {
 
     }
 
-    int choix(boolean a, String string){
+    public int choix(boolean a, String string){
         Scanner sc = new Scanner(System.in);
         int b;
         if (a) {

@@ -8,11 +8,11 @@ import java.util.Scanner;
  */
 class Init {
     private int[] tab1;
-    Init(int[] tab1) {
+  Init(int[] tab1) {
         this.tab1=tab1;
     }
 
-    int[] getTab1(int[] tab1) {
+   int[] getTab1(int[] tab1) {
         return setTab(tab1);
     }
     private static int verif(int a){

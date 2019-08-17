@@ -24,8 +24,8 @@ public class CathegoPersonnage {
                 break;
         }
     }
-    int[] attaque(int vitalit, int vital, String name, String nam, int cathego, boolean ordix, int dommage, int dommag, int intellij, int intelliji) {
-        Scanner sc = new Scanner(System.in);
+    int[] attaque(Scanner sc,int vitalit, int vital, String name, String nam, int cathego, boolean ordix, int dommage, int dommag, int intellij, int intelliji) {
+
         int[] tab= {1,1,1};
         if (!ordix) {
             if (cathego == 1) {

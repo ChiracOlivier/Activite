@@ -29,12 +29,7 @@ class MainTest {
                 int tabl[]={0,0,0,0,0,0};
                 InitOrdi initOrdi= new InitOrdi(tabl);
                 int[] chracter= initOrdi.getTab1(tabl);
-                assert((0<=chracter[0])&&(chracter[0]<=100));
-                assert((0<=chracter[1])&&(chracter[1]<=500));
-                assert((0<=chracter[2])&&(chracter[2]<=100));
-                assert((0<=chracter[3])&&(chracter[3]<=100));
-                assert((0<=chracter[4])&&(chracter[4]<=100));
-                assert((0<=chracter[5])&&(chracter[5]<=100));
+               
             }
 
             @Test

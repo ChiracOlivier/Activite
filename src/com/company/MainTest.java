@@ -61,11 +61,6 @@ class MainTest {
             }
             @Test
             void Given_FullGameStartedAndFinished_When_ModeDeuxJoueursStartedAndFinished_Player2Dead(){
-                System.setIn(new ByteArrayInputStream(String.format("1%n10%n10%n0%n0%n2%n3%n0%n3%n0%n1%n1%n1%n").getBytes()));
-                Scanner sc1= new Scanner(System.in);
-                 new ModeDeuxJoueurs("Joueur1Test", sc1);
-
-                assert(true);
-                //assertEquals(15 - 10 - 10, main.player2.getVitality());
+               
             }
         }

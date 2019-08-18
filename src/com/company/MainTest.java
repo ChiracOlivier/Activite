@@ -39,13 +39,7 @@ class MainTest {
 
             @Test
             void Given_Informations_When_Choix_Then_MakeChoicesCorrectly(){
-                System.setIn(new ByteArrayInputStream(String.format("2%n3%n").getBytes()));
-                 Scanner sc1 = new Scanner(System.in);
-                Choix choi= new Choix();
-                int entier= choi.choix(false, "Test", sc1);
-                int entie= choi.choix(true, "Test", sc1);
-                assert((1<=entier)&&(entier<=2));
-                assert((1<=entie)&&(entie<=3));
+              
             }
             @Test
             void Given_CharacteristicsOfPlayersAndInformationsBattle_When_Attaque_Then_CharacteristicAndVitalityChanged(){

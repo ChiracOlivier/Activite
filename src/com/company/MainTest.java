@@ -12,7 +12,16 @@ class MainTest {
 
             @Test
             public void Given_InformationsToCreateCharacteristicsPlayer_When_Init_Then_CharacteristicsPlayerIsCorrectlyCreated() {
-              
+                int table[]={0,0,0,0,0};
+                System.setIn(new ByteArrayInputStream(String.format("10%n5%n3%n2%n").getBytes()));
+                Scanner sc1= new Scanner(System.in);
+                Init modeUnJoueur= new Init(table);
+                int[] character = modeUnJoueur.getTab1(table, sc1);
+                assertEquals(10, character[0]);
+                assertEquals(50, character[1]);
+                assertEquals(5, character[2]);
+                assertEquals(3, character[3]);
+                assertEquals(2, character[4]);
             }
 
             @Test
